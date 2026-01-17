@@ -1,6 +1,7 @@
 require "test_helper"
 
 class ProductTest < ActiveSupport::TestCase
+  fixtures :products
   test "product attributes must not be empty" do
     product = Product.new
     assert product.invalid?
@@ -28,5 +29,31 @@ class ProductTest < ActiveSupport::TestCase
 
     product.price = 1
     assert product.valid?
+  end
+
+  def new_product(filename, content_type)
+    Product.new(
+      title: "Acme book",
+      description: "acme_description",
+      price: 24.90
+    ).tap do |product|
+      product.image.attach(
+        io: File.open("db/images/#{filename}"), filename:, content_type:)
+    end
+  end
+
+  test "image url" do
+    product = new_product("box.png", 'image/png')
+    assert product.valid?, "image/png must be valid"
+  end
+
+  test "product is not valid without a unique title" do
+    product = Product.new(title: products(:acme).title,
+                          description: "acme_description",
+                          price: 24.90)
+    product.image.attach(io: File.open("test/fixtures/files/box.png"),
+                        filename: "box.png", content_type: "image/png")
+    assert product.invalid?
+    assert_equal [ "has already been taken" ], product.errors[:title]
   end
 end

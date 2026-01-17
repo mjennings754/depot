@@ -1,0 +1,1 @@
+blob_acme: <%= ActiveStorage::FixtureSet.blob filename: 'box.png' %>

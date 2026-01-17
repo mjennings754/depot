@@ -1,0 +1,4 @@
+acme:
+  name: image
+  record: acme (Product)
+  blob: blob_acme

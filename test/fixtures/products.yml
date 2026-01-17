@@ -10,8 +10,9 @@ two:
   description: MyText
   price: 9.99
 
-acme:
-  title: Acme_book
-  description: acme_description
-  price: 24.90
-  
+pragprog:
+  title:       The Pragmatic Programmer
+  description:
+    Your Journey To Mastery, 20th Anniversary Edition (2nd Edition)
+  price:       39.99
+

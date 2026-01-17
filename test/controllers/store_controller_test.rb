@@ -5,7 +5,7 @@ class StoreControllerTest < ActionDispatch::IntegrationTest
     get store_index_url
     assert_select "nav a", minimum: 4
     assert_select "main ul li", 3
-    assert_select "h2", "Acme_book"
+    assert_select "h2", "MyString"
     assert_select "div", /\$[,\d]+\.\d\d/
     assert_response :success
   end

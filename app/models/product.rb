@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   validates_presence_of :title, :description, :image
   validates :price, numericality: { greater_than_or_equal_to: 0.01 }
   validates_uniqueness_of :title
-
+  before_destroy :ensure_not_referenced_by_any_line_item
   validate :acceptable_image
   def acceptable_image
     return unless image.attached?

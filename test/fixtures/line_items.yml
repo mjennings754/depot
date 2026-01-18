@@ -5,5 +5,6 @@ one:
   cart: one
 
 two:
-  product: two
-  cart: two
+  product: pragprog
+  order: one
+  price: 1

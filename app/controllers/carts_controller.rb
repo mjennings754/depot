@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
+  allow_unauthenticated_access only: %i[ create update destroy ]
   before_action :set_cart, only: %i[ show edit update destroy ]
-rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
   # GET /carts or /carts.json
   def index

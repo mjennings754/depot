@@ -2,6 +2,7 @@ class LineItemsController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: %i[ create ]
   before_action :set_line_item, only: %i[ show edit update destroy ]
+  allow_unauthenticated_access only: %i[ create ] 
 
   # GET /line_items or /line_items.json
   def index

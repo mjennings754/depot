@@ -3,10 +3,13 @@ Rails.application.routes.draw do
   resources :users
   resource :session
   resources :passwords, param: :token
-  resources :orders
-  resources :line_items
-  resources :carts
-  root "store#index", as: "store_index"
+
+  scope "(:locale)" do
+    resources :orders
+    resources :line_items
+    resources :carts
+    root "store#index", as: "store_index", via: :all
+  end
   resources :products
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -1,0 +1,20 @@
+ja:
+  layouts:
+    application:
+      title: "実用的な本棚"
+      home: "家"
+      questions: "質問"
+      news: "ニュース"
+      contact: "接触"
+
+  store:
+    index:
+      title_html: "実用的なカタログ"
+    product:
+      add_html: "カートに追加"
+
+  carts:
+    cart:
+      title: "あなたのカート"
+      empty: "空のカート"
+      checkout: "チェックアウト"

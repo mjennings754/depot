@@ -18,3 +18,58 @@ ja:
       title: "あなたのカート"
       empty: "空のカート"
       checkout: "チェックアウト"
+
+  number:
+    currency:
+      format:
+        unit: "¥"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format: "%u%n"
+
+  orders:
+    new:
+      legend: "詳細を入力してください"
+    form:
+      name: "名前"
+      address_html: "住所"
+      email: "電子メール"
+      pay_type: "で支払う"
+      pay_prompt_html: "支払い方法を選択してください"
+      submit: "注文する"
+      pay_types:
+        "Check":            "チェック"
+        "Credit Card":      "クレジットカード"
+        "Purchase order":   "注文書"
+      check:
+        routing_number: "ルーティング ＃"
+        account_number: "アカウント ＃"
+      cc:
+        cc_number: "cc数"
+        expiration_date: "有効期限"
+      po:
+      po_number: "私書番号"
+
+  activerecord:
+    errors:
+      messages:
+        inclusion: "リストには含まれていない"
+        blank: "空白のままにすることはできません。"
+      errors:
+        template:
+          body: "次のフィールドに問題があります:"
+          header:
+            one: "1 件のエラーにより、この %{model} を保存できませんでした"
+            other: "%{count} 個のエラーにより、この %{model} を保存できませんでした"
+    models:
+      order: "注文"
+    attributes:
+      order:
+        address: 住所"
+        name: "名前"
+        email: "電子メール"
+        pay_type: "支払い方法"
+
+  thanks:  "ご注文ありがとうございます"
+

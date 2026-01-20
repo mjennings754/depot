@@ -4,14 +4,14 @@ Rails.application.routes.draw do
   resource :session
   resources :passwords, param: :token
   resources :support_requests, only: %i[ index update ]
-
+  resources :products
   scope "(:locale)" do
     resources :orders
+    resources :products
     resources :line_items
     resources :carts
     root "store#index", as: "store_index", via: :all
   end
-  resources :products
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

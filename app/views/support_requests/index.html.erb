@@ -35,6 +35,7 @@
             <% else %>
             <h3 class="notice">No associated order</h3>
             <% end %>
+            <% if support_request.response.blank? %>
             <%= form_with(model: support_request,
                           local: true,
                           class: "depot-form") do |form| %>
@@ -47,7 +48,14 @@
               <%= form.submit "Send response" %>
             </div>
         <% end %>
-
+        <% else %>
+           <h4>Our response:</h4>
+            <p>
+            <blockquote>
+             <%= support_request.response %>
+            </blockquote>
+            </p>
+            <% end %>
         <hr>
     </li>
 <% end %>

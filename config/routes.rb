@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resource :session
   resources :passwords, param: :token
+  resources :support_requests, only: %i[ index update ]
 
   scope "(:locale)" do
     resources :orders
